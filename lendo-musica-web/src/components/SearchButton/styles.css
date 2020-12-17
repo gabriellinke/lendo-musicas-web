@@ -1,0 +1,36 @@
+#search-button button
+{
+    background-color: transparent;
+    color: var(--light-orange);
+    border-color: var(--light-orange);
+    border-radius: 4px;
+    height: 50px;
+    font-size: 18px;
+    width: 275px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-button button:hover
+{
+    color: var(--dark-orange);
+    border-color: var(--dark-orange);
+    transition: 200ms;
+}
+
+#search-button button p
+{
+    margin-left: 16px;
+}
+
+#search-button button .search-icon
+{
+    transform: rotate(90deg);
+}
+
+#search-button input:focus {
+    outline: 0;
+}
