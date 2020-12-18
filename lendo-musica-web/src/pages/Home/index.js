@@ -5,6 +5,7 @@ import api from '../../services/api';
 
 import './styles.css';
 import logo from '../../assets/logo1.svg';
+import load from '../../assets/load.gif';
 
 const Home = () =>
 {
@@ -12,43 +13,40 @@ const Home = () =>
         artist: '',
         song: '',
     });
+    const [loading, setLoading] = useState(false);
+
 
     function handleInputChange(event)
     {
         const { name, value } = event.target;
-
         setFormData({ ...formData, [name]: value }) 
     }
 
     async function handleSubmit(event)
     {
-        //ABRE MODAL DE CARREGAMENTO
         event.preventDefault(); //Faz que a página não seja atualizada automaticamente ao enviar o formulário
-        if(formData.artist !== '' && formData.song !== '')
-        {
-            // setLoading(true);
-            api.get(`${formData.artist}/${formData.song}`)    //Faz a consulta a API, salva a letra, ou se der errado manda para a página de letra não encontrada
-                .then(async (response) => {
-                    console.log(response.data.lyrics);
-                    
-                    // if(response.data.lyrics !== "")
-                    // {
-                    //     await AsyncStorage.setItem('@lyrics', response.data.lyrics);
-                    //     setLoading(false);
-                    //     navigate('SearchResult');
-                    // }
-                    // else
-                    // {
-                    //     setLoading(false);
-                    //     navigate('NotFound');
-                    // }
-                })
-                .catch(response => {
-                    console.log(response);
+
+        setLoading(true);
+        api.get(`${formData.artist}/${formData.song}`)    //Faz a consulta a API, salva a letra, ou se der errado manda para a página de letra não encontrada
+            .then(async (response) => {
+                console.log(response.data.lyrics);
+                if(response.data.lyrics !== "")
+                {
+                    // await AsyncStorage.setItem('@lyrics', response.data.lyrics);
+                    setLoading(false);
+                    // navigate('SearchResult');
+                }
+                else
+                {
+                    setLoading(false);
                     // navigate('NotFound');
-                    // setLoading(false);
-                })
-        }
+                }
+            })
+            .catch(response => {
+                console.log(response);
+                // navigate('NotFound');
+                setLoading(false);
+            })
         setFormData({artist: '', song: ''});
 
         //Direciona
@@ -81,6 +79,11 @@ const Home = () =>
                     </form>
                 </main>
             </div>
+            {loading && 
+                <div className="loading-modal">
+                    <img src={load} alt="Carregando"/>
+                </div>
+            }
         </div>
     );
 };
