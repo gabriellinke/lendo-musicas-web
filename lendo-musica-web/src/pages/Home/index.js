@@ -1,10 +1,10 @@
 import React, { useState } from 'react'; 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import SearchButton from '../../components/SearchButton';
+import Logo from '../../components/Logo';
 import api from '../../services/api';
 
 import './styles.css';
-import logo from '../../assets/logo1.svg';
 import load from '../../assets/load.gif';
 
 const Home = () =>
@@ -14,7 +14,7 @@ const Home = () =>
         song: '',
     });
     const [loading, setLoading] = useState(false);
-
+    const history = useHistory();
 
     function handleInputChange(event)
     {
@@ -32,31 +32,33 @@ const Home = () =>
                 console.log(response.data.lyrics);
                 if(response.data.lyrics !== "")
                 {
-                    // await AsyncStorage.setItem('@lyrics', response.data.lyrics);
+                    // let lyrics = localStorage.getItem('@lyrics');
+                    localStorage.setItem('@lyrics', response.data.lyrics);
+                    localStorage.setItem('@artist', formData.artist);
+                    localStorage.setItem('@song', formData.song);
+    
                     setLoading(false);
-                    // navigate('SearchResult');
+                    history.push('/result');
                 }
                 else
                 {
                     setLoading(false);
-                    // navigate('NotFound');
+                    history.push('/not-found');
                 }
             })
             .catch(response => {
                 console.log(response);
-                // navigate('NotFound');
+                history.push('/not-found');
                 setLoading(false);
             })
         setFormData({artist: '', song: ''});
-
-        //Direciona
     }
 
     return(
         <div id="page-home">
             <div className="content">
                 <header>
-                    <Link to='/'><img src={logo} alt="logo"/></Link>
+                    <Logo />
                     <Link to="/latest">Últimas buscas</Link>
                 </header>
                 <main>

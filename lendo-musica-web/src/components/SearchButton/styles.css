@@ -4,6 +4,7 @@
     color: var(--light-orange);
     border-color: var(--light-orange);
     border-radius: 4px;
+    border-style: solid;
     height: 50px;
     font-size: 18px;
     width: 275px;
@@ -21,7 +22,7 @@
     transition: 200ms;
 }
 
-#search-button button p
+#search-button button.search p
 {
     margin-left: 16px;
 }

@@ -5,7 +5,9 @@ import './styles.css';
 const Result = () =>
 {
     return(
-        <h1>Hello World</h1>
+        <div id="page-result">
+            <h1>Hello as</h1>
+        </div>
     );
 };
 

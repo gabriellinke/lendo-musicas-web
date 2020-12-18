@@ -24,11 +24,6 @@
     justify-content: space-between;
 }
 
-#page-home .content header img
-{
-    height: 40px;
-}
-
 #page-home .content header a
 {
     color: var(--light-orange);

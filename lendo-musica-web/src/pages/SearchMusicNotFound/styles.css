@@ -1,0 +1,53 @@
+#page-not-found
+{
+    background-image: linear-gradient(to top, black, var(--dark-blue));
+    color: white;
+    min-height: 100vh;
+    height: 100%;
+}
+
+#page-not-found .content
+{
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-not-found .content header
+{
+    padding-top: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-not-found .content main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 64px;
+}
+
+#page-not-found .content main h1
+{
+    margin-top: 64px;
+    margin-bottom: 32px;
+}
+
+#page-not-found .content main img
+{
+    margin-bottom: 64px;
+    height: 25vh;
+}
+
+#page-not-found .content main p.text
+{
+    max-width: 500px;
+    margin-bottom: 64px;
+}
