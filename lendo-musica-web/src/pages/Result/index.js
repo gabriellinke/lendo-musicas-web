@@ -16,24 +16,24 @@ const Result = () =>
         if(storagedArtist !== "" && storagedSong !== "" )
         {
             let musics = [];
-                let historic = localStorage.getItem('@musics');  // Recupera o histórico
-                if(historic)
-                    musics = JSON.parse(historic);
+            let historic = localStorage.getItem('@musics');  // Recupera o histórico
+            if(historic)
+                musics = JSON.parse(historic);
 
-                if(musics.length > 0)   // Verifica se a música já está no histórico
-                    for(let music of musics)
-                    {
-                        if(storagedArtist === music.artist && storagedSong === music.song)
-                            return;
-                    }
+            if(musics.length > 0)   // Verifica se a música já está no histórico
+                for(let music of musics)
+                {
+                    if(storagedArtist === music.artist && storagedSong === music.song)
+                        return;
+                }
 
-                /* Adiciona um novo valor no array criado */
-                musics.push({artist: storagedArtist, song: storagedSong});
-                if(musics.length > 10)  // Se tiver mais de 10 itens no histórico remove o mais antigo
-                    musics.shift();
+            /* Adiciona um novo valor no array criado */
+            musics.push({artist: storagedArtist, song: storagedSong});
+            if(musics.length > 10)  // Se tiver mais de 10 itens no histórico remove o mais antigo
+                musics.shift();
 
-                // /* Salva o item */
-                localStorage.setItem('@musics', JSON.stringify(musics));
+            // /* Salva o item */
+            localStorage.setItem('@musics', JSON.stringify(musics));
         }
     }, [])
 

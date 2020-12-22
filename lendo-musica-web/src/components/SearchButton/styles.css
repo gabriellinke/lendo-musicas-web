@@ -20,6 +20,7 @@
     color: var(--dark-orange);
     border-color: var(--dark-orange);
     transition: 200ms;
+    cursor: pointer;
 }
 
 #search-button button.search p
