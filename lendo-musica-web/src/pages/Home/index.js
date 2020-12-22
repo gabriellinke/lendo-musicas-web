@@ -32,7 +32,6 @@ const Home = () =>
                 console.log(response.data.lyrics);
                 if(response.data.lyrics !== "")
                 {
-                    // let lyrics = localStorage.getItem('@lyrics');
                     localStorage.setItem('@lyrics', response.data.lyrics);
                     localStorage.setItem('@artist', formData.artist);
                     localStorage.setItem('@song', formData.song);
