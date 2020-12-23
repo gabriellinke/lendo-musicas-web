@@ -1,17 +1,18 @@
 
 # Lendo música
-### Este é o projeto final da formação de programadores da equipe do aplicativo NÓS.  
+### Esta é a versão web do app Lendo música, um buscador de músicas que pode ser encontrado [aqui](https://github.com/gabriellinke/lendo-musicas-app).
 
+### Funcionamento
 <p>
-  O aplicativo Lendo música é um buscador de letras de músicas desenvolvido para Android. Ao abrir o aplicativo, o usuário se depara com uma tela de buscas, onde ele pode inserir um artista e o nome de uma música e pressionar o botão buscar para pesquisar a letra dessa música. Essa tela também tem o botão de "Últimas buscas" que, ao ser pressionado, direciona o usuário a uma página listando as suas 10 últimas buscas.
+   Ao abrir o website, o usuário se depara com uma tela de buscas, onde ele pode inserir um artista e o nome de uma música e pressionar o botão buscar para pesquisar a letra dessa música. Essa página também tem o botão de "Últimas buscas" que, ao ser pressionado, direciona o usuário a uma página listando as suas 10 últimas buscas.
  </p>
  <br>
  <p>
-  Uma vez inseridos artista e música e pressionado o botão de buscar, é feita uma requisição a <a href="https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search">API</a> e a resposta é tratada. Se a letra não for encontrada, o usuário é direcionado para uma tela de erro, dizendo que a letra não foi encontrada. Do contrário, abre-se uma nova tela onde o usuário confirma se a letra encontrada é a que ele procurava. Após isso, é possível visualizar a letra da música pesquisada.
+  Uma vez inseridos artista e música e pressionado o botão de buscar, é feita uma requisição a <a href="https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search">API</a> e a resposta é tratada. Se a letra não for encontrada, o usuário é direcionado para uma página de erro, dizendo que a letra não foi encontrada. Do contrário, abre-se uma nova página onde o usuário confirma se a letra encontrada é a que ele procurava. Após isso, é possível visualizar a letra da música pesquisada.
 </p>
 
-<p> O APK está anexado ao projeto e pode ser baixado para o uso do aplicativo.  pode ser acessado em tal link
-<br>
+### :eyes: Versão demo
+A versão de demonstração pode ser acessada clicando <a href="https://lendo-musica.netlify.app/">aqui.</a>
   
 ## Imagens do website
 
@@ -32,12 +33,6 @@
 </div>
 <br>
 
-## Iniciando o projeto
- * Instale a última versão de [React Native CLI](https://reactnative.dev/docs/0.8/getting-started) e suas dependências
- * Rodar `npm i`
- * Conectar um aparelho físico ou emulador Android
- * Rodar `npm run Android`
-
 # :construction_worker: Como rodar o projeto
 ```bash
 # Clone Repository
@@ -56,8 +51,5 @@ $ yarn install
 # Run Aplication
 $ yarn start
 ```
-Go to http://localhost:3000/ to see the result.
- 
- ## Versão Web
- Este app tem uma versão web desenvolvida em React, que pode ser encontrada [aqui](https://github.com/gabriellinke/lendo-musicas-web).
- 
+Acesse http://localhost:3000/ e veja o resultado.
+
