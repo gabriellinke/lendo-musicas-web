@@ -67,7 +67,7 @@ const LatestSearches = () =>
                 <main>
                     <h1>Histórico:</h1>
                     {musics.length > 0 ? 
-                        musics.map((music) => {
+                        musics.reverse().map((music) => {
                             return(
                                 <button className="music" onClick={() => handleSearch(music.artist, music.song)}>
                                 <p>{music.artist.replace(/^./, music.artist[0].toUpperCase())} - {music.song.replace(/^./, music.song[0].toUpperCase())}</p>
