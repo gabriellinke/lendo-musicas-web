@@ -14,7 +14,7 @@
 </p>
 
 ### :eyes: Versão demo
-A versão de demonstração pode ser acessada clicando <a href="https://lendo-musica.netlify.app/">aqui.</a>
+A versão de demonstração pode ser acessada clicando <a href="https://lendomusica.gabriellinke.tech">aqui.</a>
   
 ## :camera: Imagens do website
 
